@@ -360,6 +360,7 @@ class RawEditorState extends EditorState
       onSelectAll: selectAllEnabled
           ? () => selectAll(SelectionChangedCause.toolbar)
           : null,
+      onLiveTextInput: () {},
     );
   }
 
@@ -1746,6 +1747,9 @@ class RawEditorState extends EditorState
       }
     }
   }
+
+  @override
+  bool get liveTextInputEnabled => false;
 }
 
 class _Editor extends MultiChildRenderObjectWidget {
